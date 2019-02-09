@@ -1,7 +1,6 @@
 # Strange Error to Investigate
 
 Given these two files, we get an error calling `<Tag id={5}/>`.
-* Error:(13, 8) Cannot reference type `Tag` [1] from a value position.
 
 ```js
 // ------------------------------
@@ -15,7 +14,7 @@ import type { Tag, TagListProps } from "./components/Tag";
 class TagList extends React.Component<TagListProps> {
   render() {
     return (
-      <Tag id={5}/> //=> flow error thrown here
+      <Tag id={5}/> //=> Error:(13, 8) Cannot reference type `Tag` [1] from a value position.
     );
   }
 }
