@@ -1,5 +1,7 @@
 # Array of React Items
 
+This is allowed.
+
 ```js
 // @flow
 
@@ -35,3 +37,12 @@ class TagList extends React.Component<TagListProps> {}
   ]}
 />;
 ```
+
+This is not allowed.
+
+```js
+...
+type TagListProps = {
+  tags: Array<Tag>
+};
+...
