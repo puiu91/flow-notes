@@ -55,7 +55,7 @@ Extracting the shared type to own file.
 // @flow
 import * as React from "react";
 import { Tag } from "./components/Tag";
-import type { TagListProps } from "./justTypes";
+import type { TagListProps } from "./sharedTypes";
 
 <Tag id={5} />;
 
@@ -87,7 +87,7 @@ class Tag extends React.Component<TagProps, {}> {
 export { Tag };
 
 // ------------------------------
-// types.js
+// sharedTypes.js
 // ------------------------------
 
 // @flow
