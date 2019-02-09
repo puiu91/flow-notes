@@ -5,26 +5,27 @@
 * <https://medium.com/flow-type/even-better-support-for-react-in-flow-25b0a3485627>
 * <https://github.com/facebook/flow/blob/master/website/en/docs/react/types.md> 
 * <https://flow.org/en/docs/react/children/>
-   * Particularily for this example
-   ```js
-   import * as React from 'react';
 
-   class TabBarIOSItem extends React.Component<{}> {
-     // implementation...
-   }
+Particularily for this example
+```js
+import * as React from 'react';
 
-   type Props = {
-     children: React.ChildrenArray<React.Element<typeof TabBarIOSItem>>,
-   };
+class TabBarIOSItem extends React.Component<{}> {
+ // implementation...
+}
 
-   class TabBarIOS extends React.Component<Props> {
-     static Item = TabBarIOSItem;
-     // implementation...
-   }
+type Props = {
+ children: React.ChildrenArray<React.Element<typeof TabBarIOSItem>>,
+};
 
-   <TabBarIOS>
-     <TabBarIOS.Item>{/* ... */}</TabBarIOS.Item>
-     <TabBarIOS.Item>{/* ... */}</TabBarIOS.Item>
-     <TabBarIOS.Item>{/* ... */}</TabBarIOS.Item>
-   </TabBarIOS>;
-   ```
+class TabBarIOS extends React.Component<Props> {
+ static Item = TabBarIOSItem;
+ // implementation...
+}
+
+<TabBarIOS>
+ <TabBarIOS.Item>{/* ... */}</TabBarIOS.Item>
+ <TabBarIOS.Item>{/* ... */}</TabBarIOS.Item>
+ <TabBarIOS.Item>{/* ... */}</TabBarIOS.Item>
+</TabBarIOS>;
+```
