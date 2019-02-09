@@ -41,7 +41,6 @@ class TagList extends React.Component<TagListProps> {}
 This is not allowed.
 
 ```js
-...
 type TagListProps = {
   tags: Array<Tag>
 };
