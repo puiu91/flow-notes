@@ -43,7 +43,51 @@ export class Tag extends React.Component<TagProps, {}> {
 }
 ```
 
-## Solution
+## Solution 1
+
+Importing the type and the component separately.
+
+```js
+// ------------------------------
+// index.js
+// ------------------------------
+
+// @flow
+import * as React from "react";
+import type { TagListProps } from "./components/Tag";
+import { Tag } from "./components/Tag";
+
+class TagList extends React.Component<TagListProps> {
+  render() {
+    return (
+      <Tag id={5}/> //=> Error:(13, 8) Cannot reference type `Tag` [1] from a value position.
+    );
+  }
+}
+
+// ------------------------------
+// Tag.js
+// ------------------------------
+
+// @flow
+import * as React from "react";
+
+type TagProps = {
+  id: number
+};
+
+export type TagListProps = {
+  tags: Array<React.Node>
+};
+
+export class Tag extends React.Component<TagProps, {}> {
+  render() {
+    return <span>hello world</span>;
+  }
+}
+```
+
+## Solution 2
 
 Extracting the shared type to own file.
 
