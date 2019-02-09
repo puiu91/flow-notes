@@ -44,4 +44,4 @@ This is not allowed.
 type TagListProps = {
   tags: Array<Tag>
 };
-...
+```
