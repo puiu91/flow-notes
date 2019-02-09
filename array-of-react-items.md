@@ -38,14 +38,6 @@ class TagList extends React.Component<TagListProps> {}
 />;
 ```
 
-This is not allowed.
-
-```js
-type TagListProps = {
-  tags: Array<Tag>
-};
-```
-
 More specifically, the props type can be:
 
 ```js
@@ -57,5 +49,13 @@ type TagListProps = {
 
 type TagListProps = {
   tags: React.ChildrenArray<React.Element<typeof Tag>>
+};
+```
+
+But, this is not allowed:
+
+```js
+type TagListProps = {
+  tags: Array<Tag>
 };
 ```
