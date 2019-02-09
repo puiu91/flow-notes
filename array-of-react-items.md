@@ -50,6 +50,12 @@ More specifically, the props type can be:
 
 ```js
 type TagListProps = {
+  tags: Array<React.Element<typeof Tag>>
+};
+
+// ...or
+
+type TagListProps = {
   tags: React.ChildrenArray<React.Element<typeof Tag>>
 };
 ```
