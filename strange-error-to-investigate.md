@@ -1,6 +1,6 @@
 # Strange Error to Investigate
 
-Given these two files, we get an error calling `<Tag id={5}/>`.
+Given these two files, we get an error when calling `<Tag id={5}/>`.
 
 ```js
 // ------------------------------
