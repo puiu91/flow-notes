@@ -45,3 +45,11 @@ type TagListProps = {
   tags: Array<Tag>
 };
 ```
+
+More specifically, the props type can be:
+
+```js
+type TagListProps = {
+  tags: React.ChildrenArray<React.Element<typeof Tag>>
+};
+```
