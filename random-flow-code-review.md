@@ -104,3 +104,8 @@ function reducer(state: State, action: Action): State {
   }
 }
 ```
+
+### Redux Links
+
+* <https://github.com/facebook/flow/issues/4737>
+* <https://github.com/facebook/flow/issues/2377#issuecomment-262894389>
