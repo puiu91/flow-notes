@@ -110,3 +110,5 @@ function reducer(state: State, action: Action): State {
 * <https://github.com/facebook/flow/issues/4737>
 * <https://github.com/facebook/flow/issues/2377#issuecomment-262894389>
 * <https://stackoverflow.com/questions/42195354/flow-types-with-constant-strings-and-dependent-types/42202467#42202467>
+* <https://stackoverflow.com/questions/44834435/use-external-constant-when-defining-flow-literal-type>
+* <http://frantic.im/using-redux-with-flow>
