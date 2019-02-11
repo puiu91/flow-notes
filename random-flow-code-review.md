@@ -50,7 +50,7 @@ type State = {
 
 ### Redux Actions
 
-```
+```js
 const LOAD_PLANETS = "planets/LOAD_PLANETS";
 const LOAD_PLANETS_SUCCESS = "planets/LOAD_PLANETS_SUCCESS";
 const LOAD_PLANETS_FAIL = "planets/LOAD_PLANETS_FAIL";
