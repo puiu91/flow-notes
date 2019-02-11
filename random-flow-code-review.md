@@ -79,3 +79,28 @@ function testFails() : AllowedActions {
   return "planets/UPLOAD_PLANET"; // ✗
 }
 ```
+
+### Eliminating Redux Actions with Reduce Example
+
+* <https://stackoverflow.com/questions/48132147/how-can-i-use-a-constant-value-as-a-flowtype-literal>*
+
+```js
+// @flow
+
+type State = { +value: boolean };
+
+type FooAction = { type: "FOO", foo: boolean };
+type BarAction = { type: "BAR", bar: boolean };
+
+type Action = FooAction | BarAction;
+
+function reducer(state: State, action: Action): State {
+  switch (action.type) {
+    case "FOO": return { ...state, value: action.foo };
+    case "BAR": return { ...state, value: action.bar };
+    default:
+      (action: empty);
+      return state;
+  }
+}
+```
