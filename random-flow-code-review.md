@@ -113,3 +113,99 @@ function reducer(state: State, action: Action): State {
 * <https://stackoverflow.com/questions/42195354/flow-types-with-constant-strings-and-dependent-types/42202467#42202467>
 * <https://stackoverflow.com/questions/44834435/use-external-constant-when-defining-flow-literal-type>
 * <http://frantic.im/using-redux-with-flow>
+
+## React Props with Object Destructuring in SFC vs. Container Component
+
+```js
+// @flow
+
+import * as React from "react";
+import classNames from "classnames";
+
+type Props = {
+  children: React.Element<any>,
+  className?: string
+};
+
+const CardSFC = (props: Props) => (
+  <div
+    className={classNames(props.className, {
+      "app--section__aside--article__item": true
+    })}
+  >
+    {props.children}
+  </div>
+);
+
+class Card extends React.Component<Props> {
+  render() {
+    const { children, className } = this.props;
+
+    const cssClasses = classNames(className, {
+      "app--section__aside--article__item": true
+    });
+
+    return <div className={cssClasses}>{children}</div>;
+  }
+}
+
+// or inline props
+
+const InlinedPropsForCardSFC = (props: {
+  children: React.Element<any>,
+  className?: string
+}) => (
+  <div
+    className={classNames(props.className, {
+      "app--section__aside--article__item": true
+    })}
+  >
+    {props.children}
+  </div>
+);
+
+class InlinedPropsForCard extends React.Component<{
+  children: React.Element<any>,
+  className?: string
+}> {
+  render() {
+    const { children, className } = this.props;
+
+    const cssClasses = classNames(className, {
+      "app--section__aside--article__item": true
+    });
+
+    return <div className={cssClasses}>{children}</div>;
+  }
+}
+
+// or inline props plus destructure object in function arguments
+
+const PropsDestructuredForCardSFC = ({ children, className }: Props) => (
+  <div
+    className={classNames(className, {
+      "app--section__aside--article__item": true
+    })}
+  >
+    {children}
+  </div>
+);
+
+const InlinedPropsDestructuredForCardSFC = ({
+  children,
+  className
+}: {
+  children: React.Element<any>,
+  className?: string
+}) => (
+  <div
+    className={classNames(className, {
+      "app--section__aside--article__item": true
+    })}
+  >
+    {children}
+  </div>
+);
+
+export { Card };
+```
