@@ -116,7 +116,7 @@ function reducer(state: State, action: Action): State {
 
 ## React Props with Object Destructuring in SFC vs. Container Component
 
-For reference
+For reference - all these are legal combinations
 * <https://flow.org/en/docs/react/children/>
 
 ```js
