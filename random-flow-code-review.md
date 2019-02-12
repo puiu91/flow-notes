@@ -212,3 +212,9 @@ const InlinedPropsDestructuredForCardSFC = ({
 
 export { Card };
 ```
+
+## Typing an SFC
+
+```js
+const Header: React$ComponentType<Props> = props => /* ...etc */
+```
