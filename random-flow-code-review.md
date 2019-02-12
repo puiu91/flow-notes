@@ -107,6 +107,7 @@ function reducer(state: State, action: Action): State {
 
 ### Redux Links
 
+* <https://medium.com/flow-type/even-better-support-for-react-in-flow-25b0a3485627>
 * <https://github.com/facebook/flow/issues/4737>
 * <https://github.com/facebook/flow/issues/2377#issuecomment-262894389>
 * <https://stackoverflow.com/questions/42195354/flow-types-with-constant-strings-and-dependent-types/42202467#42202467>
